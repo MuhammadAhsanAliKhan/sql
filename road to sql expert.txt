@@ -1,0 +1,133 @@
+CREATE TABLE character(
+	name varchar(255),
+	show varchar(255),
+)
+
+Alter table character
+Add rating float;
+
+Alter table character
+Add salary float;
+
+Alter table character
+Add dateofbirth float;
+
+Alter table character
+Alter column dateofbirth datetime;
+
+insert into character (name, show) 
+values ('luffy', 'onepiece');
+
+select rating from character
+
+insert into character 
+values ('lft','circle','9.8','45000','12/12/2021');
+
+select * from character
+
+delete  from character where name = 'luffy'
+
+
+
+alter table sports
+alter column football binary not null;
+
+
+alter table sports
+alter column cricket bit not null;
+
+alter table sports
+alter column football bit not null;
+alter table sports
+alter column pingpong bit not null;
+alter table sports
+alter column chess bit not null;
+alter table sports
+alter column esports bit not null;
+
+ALTER TABLE sports
+ADD id int;
+ALTER TABLE sports
+ADD FOREIGN KEY (id) REFERENCES Student(id);
+
+insert into Student
+values ('rustam',22940,19,'BSCS');
+
+insert into sports
+values (1,0,1,0,1,22940);
+
+
+delete from sports where cricket=0
+
+ALTER TABLE sports
+ADD PRIMARY KEY (serialnum);
+
+Delete from library where bookname='lotr';
+ALter table library
+Add serialnum int not null;
+Alter table library
+Add primary key (serialnum);
+Alter table library
+Add foreign key (id) references Student(id);
+Insert into library
+values ('history of pak','course', 13/11/2019 , 22740, 3);
+
+SELECT library.*, Student.*
+FROM Student
+right JOIN library ON library.id=Student.id;
+
+SELECT library.*, Student.*
+FROM Student
+left JOIN library ON library.id=Student.id;
+
+SELECT sports.*, Student.*
+FROM Student
+left JOIN sports ON sports.id=Student.id;
+
+insert into Student
+values ('farookh',22540,17,'BSE')
+
+insert into library
+values ('dodo',null, 2020/10/10,null ,4 );
+
+update library 
+set 
+	booktype='hype'
+where 
+	bookname='dodo';
+
+/****** Script for SelectTopNRows command from SSMS  ******/
+SELECT TOP 1000 [football]
+      ,[cricket]
+      ,[pingpong]
+      ,[chess]
+      ,[esports]
+      ,[id]
+	  ,[serialnum]
+  FROM [university].[dbo].[sports]
+  SELECT TOP 1000 [name]
+      ,[id]
+      ,[age]
+      ,[program]
+  FROM [university].[dbo].[Student]
+  SELECT TOP 1000 [bookname]
+      ,[booktype]
+      ,[issuedate]
+      ,[id]
+	  ,[serialnum]
+  FROM [university].[dbo].[library]
+
+SELECT * FROM library
+WHERE booktype LIKE 'co%';
+
+create table hippo (
+	fat varchar(255),
+	veryfat varchar(255),
+)
+
+insert into hippo
+values ('giant gattaling' , 'grizzly magnum');
+
+truncate table hippo
+
+drop table hippo
